@@ -30,3 +30,8 @@ c’est statistiquement significatif avec un RR à 0.52 et IC à 95% compris ent
  révolues protège le nouveau-né prématuré contre les HIV du prématuré.
 
 **Mots clés :** Méta-analyse, sulfate de magnésium, neuroprotecteur, prématuré, HIV
+
+## AUTEUR
+
+- [@Coulibaly Zie Mamadou](https://github.com/zie225)
+- [@TUKA DEBORA](https://github.com/TUKADEBORA)
