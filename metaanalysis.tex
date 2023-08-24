@@ -1,0 +1,1154 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={data\_meta},
+  pdfauthor={Coulibaly Zie Mamadou},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{data\_meta}
+\author{Coulibaly Zie Mamadou}
+\date{2023-06-06}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#webshot::install\_phantomjs()}
+\FunctionTok{options}\NormalTok{(}\AttributeTok{knitr.table.format =} \StringTok{"html"}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(kableExtra)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: le package 'kableExtra' a été compilé avec la version R 4.2.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in !is.null(rmarkdown::metadata$output) && rmarkdown::metadata$output
+## %in% : ‘length(x) = 4 > 1’ dans la conversion automatique vers ‘logical(1)’
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(robvis)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: le package 'robvis' a été compilé avec la version R 4.2.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(knitr)}
+\FunctionTok{library}\NormalTok{(webshot)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: le package 'webshot' a été compilé avec la version R 4.2.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(robvis)}
+\FunctionTok{library}\NormalTok{(metafor)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: le package 'metafor' a été compilé avec la version R 4.2.3
+\end{verbatim}
+
+\begin{verbatim}
+## Le chargement a nécessité le package : Matrix
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: le package 'Matrix' a été compilé avec la version R 4.2.2
+\end{verbatim}
+
+\begin{verbatim}
+## Le chargement a nécessité le package : metadat
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: le package 'metadat' a été compilé avec la version R 4.2.3
+\end{verbatim}
+
+\begin{verbatim}
+## Le chargement a nécessité le package : numDeriv
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Loading the 'metafor' package (version 4.2-0). For an
+## introduction to the package please type: help(metafor)
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(meta)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: le package 'meta' a été compilé avec la version R 4.2.3
+\end{verbatim}
+
+\begin{verbatim}
+## Loading 'meta' package (version 6.5-0).
+## Type 'help(meta)' for a brief overview.
+## Readers of 'Meta-Analysis with R (Use R!)' should install
+## older version of 'meta' package: https://tinyurl.com/dt4y5drs
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: le package 'tidyverse' a été compilé avec la version R 4.2.2
+\end{verbatim}
+
+\begin{verbatim}
+## -- Attaching packages --------------------------------------- tidyverse 1.3.2 --
+\end{verbatim}
+
+\begin{verbatim}
+## v ggplot2 3.4.0      v purrr   0.3.5 
+## v tibble  3.1.8      v dplyr   1.0.10
+## v tidyr   1.2.1      v stringr 1.4.1 
+## v readr   2.1.3      v forcats 0.5.2
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: le package 'ggplot2' a été compilé avec la version R 4.2.2
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x tidyr::expand()     masks Matrix::expand()
+## x dplyr::filter()     masks stats::filter()
+## x dplyr::group_rows() masks kableExtra::group_rows()
+## x dplyr::lag()        masks stats::lag()
+## x tidyr::pack()       masks Matrix::pack()
+## x tidyr::unpack()     masks Matrix::unpack()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data\_final\_suite.csv"}\NormalTok{,}\AttributeTok{sep=}\StringTok{";"}\NormalTok{,}\AttributeTok{fileEncoding =} \StringTok{"Latin1"}\NormalTok{, }\AttributeTok{check.names =}\NormalTok{ F)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Numéro                     Auteurs Année
+## 1       1    Manoj Varanattu C and al  2017
+## 2       2          Nidhi Gupta and al  2021
+## 3       3  Sudeepta Kumar Basu and al  2011
+## 4       4       Vandana Bansal and al  2021
+## 5       5     Michael J. Stark and al  2015
+## 6       6 Caroline A. Crowther and al  2003
+## 7       7             Muhammed and al  2023
+## 8       8                 Mariam Ayed  2022
+## 9       9            Deborah G and al  2015
+## 10     10 Masoumeh Mirzamoradi and al  2015
+## 11     11                Horton et al  2015
+## 12     12       Dwight J Rouse and al  2008
+## 13     13             S Marret and al  2008
+##                                                                                                                                                                   Nom_article
+## 1                                                             Randomized controlled trial of antenatal magnesium sulfate for short-term neuroprotection in premature neonates
+## 2                                                     Magnesium Sulfate for Fetal Neuroprotection in Women at Risk of Preterm Birth: Analysis of its Effect on Cerebral Palsy
+## 3                                                                           Immediate clinical outcomes in preterm neonates receiving antenatal magnesium for neuroprotection
+## 4                                                       Efficacy of Antenatal Magnesium Sulfate for Neuroprotection in Extreme Prematurity: A Comparative Observational Study
+## 5                                                                  Effects of antenatal magnesium sulfate treatment for neonatal neuro-protection on cerebral oxygen kinetics
+## 6                                                                                                  Effect of Magnesium Sulfate Given for Neuroprotection Before Preterm Birth
+## 7                                                                            Effect of Prenatal Infusion of Magnesium Sulphate on Neurological Complication in Preterm Infant
+## 8                                                               Antenatal Magnesium Sulfate for Preterm Neuroprotection: A Single-Center Experience from Kuwait Tertiary NICU
+## 9                                                                                                                   Antenatal Magnesium and Cerebral Palsy in Preterm Infants
+## 10                                                                       Does magnesium sulfate delay the active phase of labor in women with premature rupture of membranes 
+## 11                                      The effect of magnesium sulfate administration for neuroprotection on latency in   women with preterm premature rupture of membranes 
+## 12                                                                                                                     Magnesium sulfate for the prevention of cerebral palsy
+## 13 Effect of magnesium sulphate on mortality and neurologic morbidity of the very-preterm newborn with two-year neurological outcome: Results of the prospective PREMAG trial
+##    MgHIVpositif MgHIVnegatif Total Mg ControleHIVpositif ControleHIVnegatif
+## 1             1           53       54                  9                 45
+## 2             0           49       49                  2                 46
+## 3            84          205      289                 48                138
+## 4             4           46       50                  8                 42
+## 5             4           32       36                  9                 19
+## 6           165          431      596                148                438
+## 7             0           28       28                  1                 31
+## 8            13           34       47                 90                 92
+## 9            15          762      777                 27                809
+## 10            2           44       46                  3                 43
+## 11            4          585      589                 13                589
+## 12           23         1089     1112                 38               1146
+## 13           24          317      341                 23                301
+##    Total contrôle                     Auteurs                   Design
+## 1              54    Manoj Varanattu C and al Essai_controle_randomise
+## 2              48          Nidhi Gupta and al Essai_controle_randomise
+## 3             186  Sudeepta Kumar Basu and al    Cohorte_retrospective
+## 4              50       Vandana Bansal and al      Cohorte_prospective
+## 5              28     Michael J. Stark and al      Cohorte_prospective
+## 6             586 Caroline A. Crowther and al Essai_controle_randomise
+## 7              32             Muhammed and al Essai_controle_randomise
+## 8             182                 Mariam Ayed    Cohorte_retrospective
+## 9             836            Deborah G and al Essai_controle_randomise
+## 10             46 Masoumeh Mirzamoradi and al Essai_controle_randomise
+## 11            602                Horton et al Essai_controle_randomise
+## 12           1184       Dwight J Rouse and al Essai_controle_randomise
+## 13            324             S Marret and al Essai_controle_randomise
+##                   MgSO4_regimen age_nouveau_né   RR           TE  seTE
+## 1  4g bolus puis 1g/h perfusion        <34_sem 0,11         -2,2  0,21
+## 2  4g bolus puis 1g/h perfusion      24-37_sem 0,22 -1,514127733 1,015
+## 3                  Non Specifié        <34_sem 1,13  0,122217633  0,17
+## 4  4g bolus puis 2g/h perfusion        <34_sem  0,5 -0,693147181  0,35
+## 5                      4g bolus        <34_sem 0,35 -1,049822124  0,22
+## 6  4g bolus puis 1g/h perfusion        <34_sem  1,1   0,09531018   0,1
+## 7                  Non Specifié      24-37_sem 0,38 -0,967584026  2,27
+## 8                      4g bolus        <34_sem 0,56 -0,579818495  0,14
+## 9  6g bolus puis 2g/h perfusion        <34_sem  0,6 -0,510825624   0,2
+## 10 4g bolus puis 2g/h perfusion        <34_sem 0,67 -0,400477567  0,94
+## 11 6g bolus puis 2g/h perfusion        <34_sem 0,31 -1,171182982  0,21
+## 12 6g bolus puis 2g/h perfusion        <34_sem 0,64 -0,446287103  0,17
+## 13                     4g bolus        <34_sem 0,99        -0,01  0,29
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{view}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{names}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "Numéro"             "Auteurs"            "Année"             
+##  [4] "Nom_article"        "MgHIVpositif"       "MgHIVnegatif"      
+##  [7] "Total Mg"           "ControleHIVpositif" "ControleHIVnegatif"
+## [10] "Total contrôle"     "Auteurs"            "Design"            
+## [13] "MgSO4_regimen"      "age_nouveau_né"     "RR"                
+## [16] "TE"                 "seTE"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{is.na}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       Numéro Auteurs Année Nom_article MgHIVpositif MgHIVnegatif Total Mg
+##  [1,]  FALSE   FALSE FALSE       FALSE        FALSE        FALSE    FALSE
+##  [2,]  FALSE   FALSE FALSE       FALSE        FALSE        FALSE    FALSE
+##  [3,]  FALSE   FALSE FALSE       FALSE        FALSE        FALSE    FALSE
+##  [4,]  FALSE   FALSE FALSE       FALSE        FALSE        FALSE    FALSE
+##  [5,]  FALSE   FALSE FALSE       FALSE        FALSE        FALSE    FALSE
+##  [6,]  FALSE   FALSE FALSE       FALSE        FALSE        FALSE    FALSE
+##  [7,]  FALSE   FALSE FALSE       FALSE        FALSE        FALSE    FALSE
+##  [8,]  FALSE   FALSE FALSE       FALSE        FALSE        FALSE    FALSE
+##  [9,]  FALSE   FALSE FALSE       FALSE        FALSE        FALSE    FALSE
+## [10,]  FALSE   FALSE FALSE       FALSE        FALSE        FALSE    FALSE
+## [11,]  FALSE   FALSE FALSE       FALSE        FALSE        FALSE    FALSE
+## [12,]  FALSE   FALSE FALSE       FALSE        FALSE        FALSE    FALSE
+## [13,]  FALSE   FALSE FALSE       FALSE        FALSE        FALSE    FALSE
+##       ControleHIVpositif ControleHIVnegatif Total contrôle Auteurs Design
+##  [1,]              FALSE              FALSE          FALSE   FALSE  FALSE
+##  [2,]              FALSE              FALSE          FALSE   FALSE  FALSE
+##  [3,]              FALSE              FALSE          FALSE   FALSE  FALSE
+##  [4,]              FALSE              FALSE          FALSE   FALSE  FALSE
+##  [5,]              FALSE              FALSE          FALSE   FALSE  FALSE
+##  [6,]              FALSE              FALSE          FALSE   FALSE  FALSE
+##  [7,]              FALSE              FALSE          FALSE   FALSE  FALSE
+##  [8,]              FALSE              FALSE          FALSE   FALSE  FALSE
+##  [9,]              FALSE              FALSE          FALSE   FALSE  FALSE
+## [10,]              FALSE              FALSE          FALSE   FALSE  FALSE
+## [11,]              FALSE              FALSE          FALSE   FALSE  FALSE
+## [12,]              FALSE              FALSE          FALSE   FALSE  FALSE
+## [13,]              FALSE              FALSE          FALSE   FALSE  FALSE
+##       MgSO4_regimen age_nouveau_né    RR    TE  seTE
+##  [1,]         FALSE          FALSE FALSE FALSE FALSE
+##  [2,]         FALSE          FALSE FALSE FALSE FALSE
+##  [3,]         FALSE          FALSE FALSE FALSE FALSE
+##  [4,]         FALSE          FALSE FALSE FALSE FALSE
+##  [5,]         FALSE          FALSE FALSE FALSE FALSE
+##  [6,]         FALSE          FALSE FALSE FALSE FALSE
+##  [7,]         FALSE          FALSE FALSE FALSE FALSE
+##  [8,]         FALSE          FALSE FALSE FALSE FALSE
+##  [9,]         FALSE          FALSE FALSE FALSE FALSE
+## [10,]         FALSE          FALSE FALSE FALSE FALSE
+## [11,]         FALSE          FALSE FALSE FALSE FALSE
+## [12,]         FALSE          FALSE FALSE FALSE FALSE
+## [13,]         FALSE          FALSE FALSE FALSE FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dat }\OtherTok{\textless{}{-}} \FunctionTok{escalc}\NormalTok{(}\AttributeTok{measure=}\StringTok{"RR"}\NormalTok{, }\AttributeTok{ai=}\NormalTok{MgHIVpositif, }\AttributeTok{bi=}\NormalTok{MgHIVnegatif, }\AttributeTok{ci=}\NormalTok{ControleHIVpositif, }\AttributeTok{di=}\NormalTok{ControleHIVnegatif, }\AttributeTok{data=}\NormalTok{data,}
+              \AttributeTok{slab=}\FunctionTok{paste}\NormalTok{(Auteurs, Année, }\AttributeTok{sep=}\StringTok{", "}\NormalTok{)) }\CommentTok{\# also add study labels}
+\NormalTok{dat}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##    Numéro                     Auteurs Année 
+## 1       1    Manoj Varanattu C and al  2017 
+## 2       2          Nidhi Gupta and al  2021 
+## 3       3  Sudeepta Kumar Basu and al  2011 
+## 4       4       Vandana Bansal and al  2021 
+## 5       5     Michael J. Stark and al  2015 
+## 6       6 Caroline A. Crowther and al  2003 
+## 7       7             Muhammed and al  2023 
+## 8       8                 Mariam Ayed  2022 
+## 9       9            Deborah G and al  2015 
+## 10     10 Masoumeh Mirzamoradi and al  2015 
+## 11     11                Horton et al  2015 
+## 12     12       Dwight J Rouse and al  2008 
+## 13     13             S Marret and al  2008 
+##                                                                                                                                                                   Nom_article 
+## 1                                                             Randomized controlled trial of antenatal magnesium sulfate for short-term neuroprotection in premature neonates 
+## 2                                                     Magnesium Sulfate for Fetal Neuroprotection in Women at Risk of Preterm Birth: Analysis of its Effect on Cerebral Palsy 
+## 3                                                                           Immediate clinical outcomes in preterm neonates receiving antenatal magnesium for neuroprotection 
+## 4                                                       Efficacy of Antenatal Magnesium Sulfate for Neuroprotection in Extreme Prematurity: A Comparative Observational Study 
+## 5                                                                  Effects of antenatal magnesium sulfate treatment for neonatal neuro-protection on cerebral oxygen kinetics 
+## 6                                                                                                  Effect of Magnesium Sulfate Given for Neuroprotection Before Preterm Birth 
+## 7                                                                            Effect of Prenatal Infusion of Magnesium Sulphate on Neurological Complication in Preterm Infant 
+## 8                                                               Antenatal Magnesium Sulfate for Preterm Neuroprotection: A Single-Center Experience from Kuwait Tertiary NICU 
+## 9                                                                                                                   Antenatal Magnesium and Cerebral Palsy in Preterm Infants 
+## 10                                                                       Does magnesium sulfate delay the active phase of labor in women with premature rupture of membranes  
+## 11                                      The effect of magnesium sulfate administration for neuroprotection on latency in   women with preterm premature rupture of membranes  
+## 12                                                                                                                     Magnesium sulfate for the prevention of cerebral palsy 
+## 13 Effect of magnesium sulphate on mortality and neurologic morbidity of the very-preterm newborn with two-year neurological outcome: Results of the prospective PREMAG trial 
+##    MgHIVpositif MgHIVnegatif Total.Mg ControleHIVpositif ControleHIVnegatif 
+## 1             1           53       54                  9                 45 
+## 2             0           49       49                  2                 46 
+## 3            84          205      289                 48                138 
+## 4             4           46       50                  8                 42 
+## 5             4           32       36                  9                 19 
+## 6           165          431      596                148                438 
+## 7             0           28       28                  1                 31 
+## 8            13           34       47                 90                 92 
+## 9            15          762      777                 27                809 
+## 10            2           44       46                  3                 43 
+## 11            4          585      589                 13                589 
+## 12           23         1089     1112                 38               1146 
+## 13           24          317      341                 23                301 
+##    Total.contrôle                   Auteurs.1                   Design 
+## 1              54    Manoj Varanattu C and al Essai_controle_randomise 
+## 2              48          Nidhi Gupta and al Essai_controle_randomise 
+## 3             186  Sudeepta Kumar Basu and al    Cohorte_retrospective 
+## 4              50       Vandana Bansal and al      Cohorte_prospective 
+## 5              28     Michael J. Stark and al      Cohorte_prospective 
+## 6             586 Caroline A. Crowther and al Essai_controle_randomise 
+## 7              32             Muhammed and al Essai_controle_randomise 
+## 8             182                 Mariam Ayed    Cohorte_retrospective 
+## 9             836            Deborah G and al Essai_controle_randomise 
+## 10             46 Masoumeh Mirzamoradi and al Essai_controle_randomise 
+## 11            602                Horton et al Essai_controle_randomise 
+## 12           1184       Dwight J Rouse and al Essai_controle_randomise 
+## 13            324             S Marret and al Essai_controle_randomise 
+##                   MgSO4_regimen age_nouveau_né   RR           TE  seTE      yi 
+## 1  4g bolus puis 1g/h perfusion        <34_sem 0,11         -2,2  0,21 -2.1972 
+## 2  4g bolus puis 1g/h perfusion      24-37_sem 0,22 -1,514127733 1,015 -1.6296 
+## 3                  Non Specifié        <34_sem 1,13  0,122217633  0,17  0.1189 
+## 4  4g bolus puis 2g/h perfusion        <34_sem  0,5 -0,693147181  0,35 -0.6931 
+## 5                      4g bolus        <34_sem 0,35 -1,049822124  0,22 -1.0622 
+## 6  4g bolus puis 1g/h perfusion        <34_sem  1,1   0,09531018   0,1  0.0918 
+## 7                  Non Specifié      24-37_sem 0,38 -0,967584026  2,27 -0.9694 
+## 8                      4g bolus        <34_sem 0,56 -0,579818495  0,14 -0.5810 
+## 9  6g bolus puis 2g/h perfusion        <34_sem  0,6 -0,510825624   0,2 -0.5146 
+## 10 4g bolus puis 2g/h perfusion        <34_sem 0,67 -0,400477567  0,94 -0.4055 
+## 11 6g bolus puis 2g/h perfusion        <34_sem 0,31 -1,171182982  0,21 -1.1568 
+## 12 6g bolus puis 2g/h perfusion        <34_sem 0,64 -0,446287103  0,17 -0.4394 
+## 13                     4g bolus        <34_sem 0,99        -0,01  0,29 -0.0086 
+##        vi 
+## 1  1.0741 
+## 2  2.3596 
+## 3  0.0239 
+## 4  0.3350 
+## 5  0.2976 
+## 6  0.0094 
+## 7  2.6019 
+## 8  0.0613 
+## 9  0.1012 
+## 10 0.7899 
+## 11 0.3236 
+## 12 0.0681 
+## 13 0.0791
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# fit random{-}effects model}
+\NormalTok{res }\OtherTok{\textless{}{-}} \FunctionTok{rma}\NormalTok{(yi, vi, }\AttributeTok{data=}\NormalTok{dat, }\AttributeTok{test=}\StringTok{"knha"}\NormalTok{)}
+\NormalTok{res}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Random-Effects Model (k = 13; tau^2 estimator: REML)
+## 
+## tau^2 (estimated amount of total heterogeneity): 0.1140 (SE = 0.0977)
+## tau (square root of estimated tau^2 value):      0.3377
+## I^2 (total heterogeneity / total variability):   58.68%
+## H^2 (total variability / sampling variability):  2.42
+## 
+## Test for Heterogeneity:
+## Q(df = 12) = 26.2657, p-val = 0.0098
+## 
+## Model Results:
+## 
+## estimate      se     tval  df    pval    ci.lb    ci.ub    
+##  -0.3615  0.1405  -2.5722  12  0.0244  -0.6676  -0.0553  * 
+## 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# predicted pooled risk ratio (with 95\% confidence/prediction intervals)}
+\FunctionTok{predict}\NormalTok{(res, }\AttributeTok{transf=}\NormalTok{exp, }\AttributeTok{digits=}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  pred ci.lb ci.ub pi.lb pi.ub 
+##  0.70  0.51  0.95  0.31  1.55
+\end{verbatim}
+
+names(data)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{names}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "Numéro"             "Auteurs"            "Année"             
+##  [4] "Nom_article"        "MgHIVpositif"       "MgHIVnegatif"      
+##  [7] "Total Mg"           "ControleHIVpositif" "ControleHIVnegatif"
+## [10] "Total contrôle"     "Auteurs"            "Design"            
+## [13] "MgSO4_regimen"      "age_nouveau_né"     "RR"                
+## [16] "TE"                 "seTE"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\# get the weights and format them as will be used in the forest plot}
+\NormalTok{weights }\OtherTok{\textless{}{-}} \FunctionTok{formatC}\NormalTok{(}\FunctionTok{weights}\NormalTok{(res), }\AttributeTok{format=}\StringTok{"f"}\NormalTok{, }\AttributeTok{digits=}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\# get the weights and format them as will be used in the forest plot}
+\NormalTok{weights }\OtherTok{\textless{}{-}} \FunctionTok{formatC}\NormalTok{(}\FunctionTok{weights}\NormalTok{(res), }\AttributeTok{format=}\StringTok{"f"}\NormalTok{, }\AttributeTok{digits=}\DecValTok{1}\NormalTok{)}
+ 
+\DocumentationTok{\#\#\# adjust the margins}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mar=}\FunctionTok{c}\NormalTok{(}\FloatTok{2.7}\NormalTok{,}\FloatTok{3.2}\NormalTok{,}\FloatTok{2.3}\NormalTok{,}\FloatTok{1.3}\NormalTok{), }\AttributeTok{mgp=}\FunctionTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{), }\AttributeTok{tcl=}\FloatTok{0.15}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# forest plot}
+\NormalTok{sav}\OtherTok{\textless{}{-}}\FunctionTok{forest}\NormalTok{(res, }\AttributeTok{atransf=}\NormalTok{exp, }\AttributeTok{at=}\FunctionTok{log}\NormalTok{(}\FunctionTok{c}\NormalTok{(.}\DecValTok{05}\NormalTok{, .}\DecValTok{25}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{4}\NormalTok{)), }\AttributeTok{xlim=}\FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{16}\NormalTok{,}\DecValTok{6}\NormalTok{),}
+       \AttributeTok{showweights=}\ConstantTok{TRUE}\NormalTok{,}\AttributeTok{addfit=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{addpred=}\ConstantTok{TRUE}\NormalTok{,}\AttributeTok{annotate=}\ConstantTok{TRUE}\NormalTok{,}
+       \AttributeTok{ilab=}\FunctionTok{cbind}\NormalTok{(MgHIVpositif, MgHIVnegatif, ControleHIVpositif, ControleHIVnegatif), }\AttributeTok{ilab.xpos=}\FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{9.5}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{8}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{6}\NormalTok{,}\SpecialCharTok{{-}}\FloatTok{4.5}\NormalTok{), }\AttributeTok{shade=}\StringTok{"zebra"}\NormalTok{,}
+       \AttributeTok{header=}\StringTok{"Author(s) and Year"}\NormalTok{)}
+\FunctionTok{text}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{9.5}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{8}\NormalTok{,}\SpecialCharTok{{-}}\DecValTok{6}\NormalTok{,}\SpecialCharTok{{-}}\FloatTok{4.5}\NormalTok{), res}\SpecialCharTok{$}\NormalTok{k}\SpecialCharTok{+}\DecValTok{2}\NormalTok{, }\FunctionTok{c}\NormalTok{(}\StringTok{"HIV+"}\NormalTok{, }\StringTok{"HIV{-}"}\NormalTok{, }\StringTok{"HIV+"}\NormalTok{, }\StringTok{"HIV{-}"}\NormalTok{), }\AttributeTok{font=}\DecValTok{2}\NormalTok{)}
+\FunctionTok{text}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\FloatTok{8.75}\NormalTok{,}\SpecialCharTok{{-}}\FloatTok{5.25}\NormalTok{),     res}\SpecialCharTok{$}\NormalTok{k}\SpecialCharTok{+}\DecValTok{3}\NormalTok{, }\FunctionTok{c}\NormalTok{(}\StringTok{"MgSO4"}\NormalTok{, }\StringTok{"Control"}\NormalTok{), }\AttributeTok{font=}\DecValTok{2}\NormalTok{)}
+
+\NormalTok{res }\OtherTok{\textless{}{-}} \FunctionTok{rma}\NormalTok{(yi, vi, }\AttributeTok{data=}\NormalTok{dat, }\AttributeTok{test=}\StringTok{"knha"}\NormalTok{)}
+\NormalTok{res}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Random-Effects Model (k = 13; tau^2 estimator: REML)
+## 
+## tau^2 (estimated amount of total heterogeneity): 0.1140 (SE = 0.0977)
+## tau (square root of estimated tau^2 value):      0.3377
+## I^2 (total heterogeneity / total variability):   58.68%
+## H^2 (total variability / sampling variability):  2.42
+## 
+## Test for Heterogeneity:
+## Q(df = 12) = 26.2657, p-val = 0.0098
+## 
+## Model Results:
+## 
+## estimate      se     tval  df    pval    ci.lb    ci.ub    
+##  -0.3615  0.1405  -2.5722  12  0.0244  -0.6676  -0.0553  * 
+## 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\# add the 100.0 for the sum of the weights}
+\FunctionTok{text}\NormalTok{(sav}\SpecialCharTok{$}\NormalTok{ilab.xpos[}\DecValTok{3}\NormalTok{], }\DecValTok{0}\NormalTok{, }\StringTok{"100.0"}\NormalTok{)}
+ 
+\DocumentationTok{\#\#\# add the column totals for the counts and sample sizes}
+\FunctionTok{text}\NormalTok{(sav}\SpecialCharTok{$}\NormalTok{ilab.xpos[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{], }\DecValTok{0}\NormalTok{, }\FunctionTok{c}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\FunctionTok{sum}\NormalTok{(dat}\SpecialCharTok{$}\NormalTok{ai), }\StringTok{"/"}\NormalTok{, }\FunctionTok{sum}\NormalTok{(dat}\SpecialCharTok{$}\NormalTok{n1i)), }\FunctionTok{paste}\NormalTok{(}\FunctionTok{sum}\NormalTok{(dat}\SpecialCharTok{$}\NormalTok{ci), }\StringTok{"/"}\NormalTok{, }\FunctionTok{sum}\NormalTok{(dat}\SpecialCharTok{$}\NormalTok{n2i))))}
+ 
+\DocumentationTok{\#\#\# add text with heterogeneity statistics}
+\FunctionTok{text}\NormalTok{(sav}\SpecialCharTok{$}\NormalTok{xlim[}\DecValTok{1}\NormalTok{], }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\AttributeTok{pos=}\DecValTok{1}\NormalTok{, }\FunctionTok{bquote}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"Test for heterogeneity: "}\NormalTok{, tau}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{, }\StringTok{"="}\NormalTok{,}
+\NormalTok{     .(}\FunctionTok{formatC}\NormalTok{(res}\SpecialCharTok{$}\NormalTok{tau2, }\AttributeTok{digits=}\DecValTok{2}\NormalTok{, }\AttributeTok{format=}\StringTok{"f"}\NormalTok{)), }\StringTok{"; "}\NormalTok{, chi}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{, }\StringTok{"="}\NormalTok{,}
+\NormalTok{     .(}\FunctionTok{formatC}\NormalTok{(res}\SpecialCharTok{$}\NormalTok{QE, }\AttributeTok{digits=}\DecValTok{2}\NormalTok{, }\AttributeTok{format=}\StringTok{"f"}\NormalTok{)), }\StringTok{", df="}\NormalTok{, .(res}\SpecialCharTok{$}\NormalTok{k }\SpecialCharTok{{-}}\NormalTok{ res}\SpecialCharTok{$}\NormalTok{p),}
+     \StringTok{", P="}\NormalTok{, .(}\FunctionTok{formatC}\NormalTok{(res}\SpecialCharTok{$}\NormalTok{QEp, }\AttributeTok{digits=}\DecValTok{2}\NormalTok{, }\AttributeTok{format=}\StringTok{"f"}\NormalTok{)), }\StringTok{"; "}\NormalTok{, I}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{, }\StringTok{"="}\NormalTok{,}
+\NormalTok{     .(}\FunctionTok{formatC}\NormalTok{(res}\SpecialCharTok{$}\NormalTok{I2, }\AttributeTok{digits=}\DecValTok{0}\NormalTok{, }\AttributeTok{format=}\StringTok{"f"}\NormalTok{)), }\StringTok{"\%"}\NormalTok{)))}
+ 
+\DocumentationTok{\#\#\# add text for test of overall effect}
+\FunctionTok{text}\NormalTok{(sav}\SpecialCharTok{$}\NormalTok{xlim[}\DecValTok{1}\NormalTok{], }\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{, }\AttributeTok{pos=}\DecValTok{1}\NormalTok{, }\FunctionTok{bquote}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"Test for overall effect: Z="}\NormalTok{,}
+\NormalTok{     .(}\FunctionTok{formatC}\NormalTok{(res}\SpecialCharTok{$}\NormalTok{zval, }\AttributeTok{digits=}\DecValTok{2}\NormalTok{, }\AttributeTok{format=}\StringTok{"f"}\NormalTok{)),}
+     \StringTok{", P"}\NormalTok{, .(}\FunctionTok{ifelse}\NormalTok{(res}\SpecialCharTok{$}\NormalTok{pval}\SpecialCharTok{\textless{}}\NormalTok{.}\DecValTok{001}\NormalTok{, }\StringTok{"\textless{}0.001"}\NormalTok{,}
+                     \FunctionTok{paste0}\NormalTok{(}\StringTok{"="}\NormalTok{,}\FunctionTok{formatC}\NormalTok{(res}\SpecialCharTok{$}\NormalTok{pval, }\AttributeTok{digits=}\DecValTok{2}\NormalTok{, }\AttributeTok{format=}\StringTok{"f"}\NormalTok{)))))))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{metaanalysis_files/figure-latex/unnamed-chunk-13-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{weights}\NormalTok{(res)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Manoj Varanattu C and al, 2017          Nidhi Gupta and al, 2021 
+##                         1.8285142                         0.8782539 
+##  Sudeepta Kumar Basu and al, 2011       Vandana Bansal and al, 2021 
+##                        15.7500171                         4.8381095 
+##     Michael J. Stark and al, 2015 Caroline A. Crowther and al, 2003 
+##                         5.2774446                        17.5957030 
+##             Muhammed and al, 2023                 Mariam Ayed, 2022 
+##                         0.7999041                        12.3931531 
+##            Deborah G and al, 2015 Masoumeh Mirzamoradi and al, 2015 
+##                        10.0926155                         2.4034732 
+##                Horton et al, 2015       Dwight J Rouse and al, 2008 
+##                         4.9645452                        11.9312024 
+##             S Marret and al, 2008 
+##                        11.2470642
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{funnel}\NormalTok{(res)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{metaanalysis_files/figure-latex/unnamed-chunk-15-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{names}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "Numéro"             "Auteurs"            "Année"             
+##  [4] "Nom_article"        "MgHIVpositif"       "MgHIVnegatif"      
+##  [7] "Total Mg"           "ControleHIVpositif" "ControleHIVnegatif"
+## [10] "Total contrôle"     "Auteurs"            "Design"            
+## [13] "MgSO4_regimen"      "age_nouveau_né"     "RR"                
+## [16] "TE"                 "seTE"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data\_final\_suite.csv"}\NormalTok{,}\AttributeTok{sep=}\StringTok{";"}\NormalTok{,}\AttributeTok{fileEncoding =} \StringTok{"Latin1"}\NormalTok{, }\AttributeTok{check.names =}\NormalTok{ F)}
+\NormalTok{data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Numéro                     Auteurs Année
+## 1       1    Manoj Varanattu C and al  2017
+## 2       2          Nidhi Gupta and al  2021
+## 3       3  Sudeepta Kumar Basu and al  2011
+## 4       4       Vandana Bansal and al  2021
+## 5       5     Michael J. Stark and al  2015
+## 6       6 Caroline A. Crowther and al  2003
+## 7       7             Muhammed and al  2023
+## 8       8                 Mariam Ayed  2022
+## 9       9            Deborah G and al  2015
+## 10     10 Masoumeh Mirzamoradi and al  2015
+## 11     11                Horton et al  2015
+## 12     12       Dwight J Rouse and al  2008
+## 13     13             S Marret and al  2008
+##                                                                                                                                                                   Nom_article
+## 1                                                             Randomized controlled trial of antenatal magnesium sulfate for short-term neuroprotection in premature neonates
+## 2                                                     Magnesium Sulfate for Fetal Neuroprotection in Women at Risk of Preterm Birth: Analysis of its Effect on Cerebral Palsy
+## 3                                                                           Immediate clinical outcomes in preterm neonates receiving antenatal magnesium for neuroprotection
+## 4                                                       Efficacy of Antenatal Magnesium Sulfate for Neuroprotection in Extreme Prematurity: A Comparative Observational Study
+## 5                                                                  Effects of antenatal magnesium sulfate treatment for neonatal neuro-protection on cerebral oxygen kinetics
+## 6                                                                                                  Effect of Magnesium Sulfate Given for Neuroprotection Before Preterm Birth
+## 7                                                                            Effect of Prenatal Infusion of Magnesium Sulphate on Neurological Complication in Preterm Infant
+## 8                                                               Antenatal Magnesium Sulfate for Preterm Neuroprotection: A Single-Center Experience from Kuwait Tertiary NICU
+## 9                                                                                                                   Antenatal Magnesium and Cerebral Palsy in Preterm Infants
+## 10                                                                       Does magnesium sulfate delay the active phase of labor in women with premature rupture of membranes 
+## 11                                      The effect of magnesium sulfate administration for neuroprotection on latency in   women with preterm premature rupture of membranes 
+## 12                                                                                                                     Magnesium sulfate for the prevention of cerebral palsy
+## 13 Effect of magnesium sulphate on mortality and neurologic morbidity of the very-preterm newborn with two-year neurological outcome: Results of the prospective PREMAG trial
+##    MgHIVpositif MgHIVnegatif Total Mg ControleHIVpositif ControleHIVnegatif
+## 1             1           53       54                  9                 45
+## 2             0           49       49                  2                 46
+## 3            84          205      289                 48                138
+## 4             4           46       50                  8                 42
+## 5             4           32       36                  9                 19
+## 6           165          431      596                148                438
+## 7             0           28       28                  1                 31
+## 8            13           34       47                 90                 92
+## 9            15          762      777                 27                809
+## 10            2           44       46                  3                 43
+## 11            4          585      589                 13                589
+## 12           23         1089     1112                 38               1146
+## 13           24          317      341                 23                301
+##    Total contrôle                     Auteurs                   Design
+## 1              54    Manoj Varanattu C and al Essai_controle_randomise
+## 2              48          Nidhi Gupta and al Essai_controle_randomise
+## 3             186  Sudeepta Kumar Basu and al    Cohorte_retrospective
+## 4              50       Vandana Bansal and al      Cohorte_prospective
+## 5              28     Michael J. Stark and al      Cohorte_prospective
+## 6             586 Caroline A. Crowther and al Essai_controle_randomise
+## 7              32             Muhammed and al Essai_controle_randomise
+## 8             182                 Mariam Ayed    Cohorte_retrospective
+## 9             836            Deborah G and al Essai_controle_randomise
+## 10             46 Masoumeh Mirzamoradi and al Essai_controle_randomise
+## 11            602                Horton et al Essai_controle_randomise
+## 12           1184       Dwight J Rouse and al Essai_controle_randomise
+## 13            324             S Marret and al Essai_controle_randomise
+##                   MgSO4_regimen age_nouveau_né   RR           TE  seTE
+## 1  4g bolus puis 1g/h perfusion        <34_sem 0,11         -2,2  0,21
+## 2  4g bolus puis 1g/h perfusion      24-37_sem 0,22 -1,514127733 1,015
+## 3                  Non Specifié        <34_sem 1,13  0,122217633  0,17
+## 4  4g bolus puis 2g/h perfusion        <34_sem  0,5 -0,693147181  0,35
+## 5                      4g bolus        <34_sem 0,35 -1,049822124  0,22
+## 6  4g bolus puis 1g/h perfusion        <34_sem  1,1   0,09531018   0,1
+## 7                  Non Specifié      24-37_sem 0,38 -0,967584026  2,27
+## 8                      4g bolus        <34_sem 0,56 -0,579818495  0,14
+## 9  6g bolus puis 2g/h perfusion        <34_sem  0,6 -0,510825624   0,2
+## 10 4g bolus puis 2g/h perfusion        <34_sem 0,67 -0,400477567  0,94
+## 11 6g bolus puis 2g/h perfusion        <34_sem 0,31 -1,171182982  0,21
+## 12 6g bolus puis 2g/h perfusion        <34_sem 0,64 -0,446287103  0,17
+## 13                     4g bolus        <34_sem 0,99        -0,01  0,29
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#   TE : Treatment effect/Effect size = ln(RR/OR/HR)}
+\DocumentationTok{\#\#   seTE : Standard error of TE= OR Intervalle confidence/3.92=Upper{-}Lower/3.92}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data\_final\_suite.csv"}\NormalTok{,}\AttributeTok{sep=}\StringTok{";"}\NormalTok{,}\AttributeTok{fileEncoding =} \StringTok{"Latin1"}\NormalTok{, }\AttributeTok{check.names =}\NormalTok{ F)}
+\NormalTok{data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Numéro                     Auteurs Année
+## 1       1    Manoj Varanattu C and al  2017
+## 2       2          Nidhi Gupta and al  2021
+## 3       3  Sudeepta Kumar Basu and al  2011
+## 4       4       Vandana Bansal and al  2021
+## 5       5     Michael J. Stark and al  2015
+## 6       6 Caroline A. Crowther and al  2003
+## 7       7             Muhammed and al  2023
+## 8       8                 Mariam Ayed  2022
+## 9       9            Deborah G and al  2015
+## 10     10 Masoumeh Mirzamoradi and al  2015
+## 11     11                Horton et al  2015
+## 12     12       Dwight J Rouse and al  2008
+## 13     13             S Marret and al  2008
+##                                                                                                                                                                   Nom_article
+## 1                                                             Randomized controlled trial of antenatal magnesium sulfate for short-term neuroprotection in premature neonates
+## 2                                                     Magnesium Sulfate for Fetal Neuroprotection in Women at Risk of Preterm Birth: Analysis of its Effect on Cerebral Palsy
+## 3                                                                           Immediate clinical outcomes in preterm neonates receiving antenatal magnesium for neuroprotection
+## 4                                                       Efficacy of Antenatal Magnesium Sulfate for Neuroprotection in Extreme Prematurity: A Comparative Observational Study
+## 5                                                                  Effects of antenatal magnesium sulfate treatment for neonatal neuro-protection on cerebral oxygen kinetics
+## 6                                                                                                  Effect of Magnesium Sulfate Given for Neuroprotection Before Preterm Birth
+## 7                                                                            Effect of Prenatal Infusion of Magnesium Sulphate on Neurological Complication in Preterm Infant
+## 8                                                               Antenatal Magnesium Sulfate for Preterm Neuroprotection: A Single-Center Experience from Kuwait Tertiary NICU
+## 9                                                                                                                   Antenatal Magnesium and Cerebral Palsy in Preterm Infants
+## 10                                                                       Does magnesium sulfate delay the active phase of labor in women with premature rupture of membranes 
+## 11                                      The effect of magnesium sulfate administration for neuroprotection on latency in   women with preterm premature rupture of membranes 
+## 12                                                                                                                     Magnesium sulfate for the prevention of cerebral palsy
+## 13 Effect of magnesium sulphate on mortality and neurologic morbidity of the very-preterm newborn with two-year neurological outcome: Results of the prospective PREMAG trial
+##    MgHIVpositif MgHIVnegatif Total Mg ControleHIVpositif ControleHIVnegatif
+## 1             1           53       54                  9                 45
+## 2             0           49       49                  2                 46
+## 3            84          205      289                 48                138
+## 4             4           46       50                  8                 42
+## 5             4           32       36                  9                 19
+## 6           165          431      596                148                438
+## 7             0           28       28                  1                 31
+## 8            13           34       47                 90                 92
+## 9            15          762      777                 27                809
+## 10            2           44       46                  3                 43
+## 11            4          585      589                 13                589
+## 12           23         1089     1112                 38               1146
+## 13           24          317      341                 23                301
+##    Total contrôle                     Auteurs                   Design
+## 1              54    Manoj Varanattu C and al Essai_controle_randomise
+## 2              48          Nidhi Gupta and al Essai_controle_randomise
+## 3             186  Sudeepta Kumar Basu and al    Cohorte_retrospective
+## 4              50       Vandana Bansal and al      Cohorte_prospective
+## 5              28     Michael J. Stark and al      Cohorte_prospective
+## 6             586 Caroline A. Crowther and al Essai_controle_randomise
+## 7              32             Muhammed and al Essai_controle_randomise
+## 8             182                 Mariam Ayed    Cohorte_retrospective
+## 9             836            Deborah G and al Essai_controle_randomise
+## 10             46 Masoumeh Mirzamoradi and al Essai_controle_randomise
+## 11            602                Horton et al Essai_controle_randomise
+## 12           1184       Dwight J Rouse and al Essai_controle_randomise
+## 13            324             S Marret and al Essai_controle_randomise
+##                   MgSO4_regimen age_nouveau_né   RR           TE  seTE
+## 1  4g bolus puis 1g/h perfusion        <34_sem 0,11         -2,2  0,21
+## 2  4g bolus puis 1g/h perfusion      24-37_sem 0,22 -1,514127733 1,015
+## 3                  Non Specifié        <34_sem 1,13  0,122217633  0,17
+## 4  4g bolus puis 2g/h perfusion        <34_sem  0,5 -0,693147181  0,35
+## 5                      4g bolus        <34_sem 0,35 -1,049822124  0,22
+## 6  4g bolus puis 1g/h perfusion        <34_sem  1,1   0,09531018   0,1
+## 7                  Non Specifié      24-37_sem 0,38 -0,967584026  2,27
+## 8                      4g bolus        <34_sem 0,56 -0,579818495  0,14
+## 9  6g bolus puis 2g/h perfusion        <34_sem  0,6 -0,510825624   0,2
+## 10 4g bolus puis 2g/h perfusion        <34_sem 0,67 -0,400477567  0,94
+## 11 6g bolus puis 2g/h perfusion        <34_sem 0,31 -1,171182982  0,21
+## 12 6g bolus puis 2g/h perfusion        <34_sem 0,64 -0,446287103  0,17
+## 13                     4g bolus        <34_sem 0,99        -0,01  0,29
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data}\SpecialCharTok{$}\NormalTok{RR}\OtherTok{\textless{}{-}}\FunctionTok{gsub}\NormalTok{(}\StringTok{","}\NormalTok{,}\StringTok{"."}\NormalTok{,data}\SpecialCharTok{$}\NormalTok{RR)}
+\NormalTok{data}\SpecialCharTok{$}\NormalTok{TE}\OtherTok{\textless{}{-}}\FunctionTok{gsub}\NormalTok{(}\StringTok{","}\NormalTok{,}\StringTok{"."}\NormalTok{,data}\SpecialCharTok{$}\NormalTok{TE)}
+\NormalTok{data}\SpecialCharTok{$}\NormalTok{seTE}\OtherTok{\textless{}{-}}\FunctionTok{gsub}\NormalTok{(}\StringTok{","}\NormalTok{,}\StringTok{"."}\NormalTok{,data}\SpecialCharTok{$}\NormalTok{seTE)}
+
+
+\NormalTok{data}\SpecialCharTok{$}\NormalTok{RR}\OtherTok{\textless{}{-}}\FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{as.character}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{RR))}
+\NormalTok{data}\SpecialCharTok{$}\NormalTok{TE}\OtherTok{\textless{}{-}}\FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{as.character}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{TE))}
+\NormalTok{data}\SpecialCharTok{$}\NormalTok{seTE}\OtherTok{\textless{}{-}}\FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{as.character}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{seTE))}
+
+\NormalTok{data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Numéro                     Auteurs Année
+## 1       1    Manoj Varanattu C and al  2017
+## 2       2          Nidhi Gupta and al  2021
+## 3       3  Sudeepta Kumar Basu and al  2011
+## 4       4       Vandana Bansal and al  2021
+## 5       5     Michael J. Stark and al  2015
+## 6       6 Caroline A. Crowther and al  2003
+## 7       7             Muhammed and al  2023
+## 8       8                 Mariam Ayed  2022
+## 9       9            Deborah G and al  2015
+## 10     10 Masoumeh Mirzamoradi and al  2015
+## 11     11                Horton et al  2015
+## 12     12       Dwight J Rouse and al  2008
+## 13     13             S Marret and al  2008
+##                                                                                                                                                                   Nom_article
+## 1                                                             Randomized controlled trial of antenatal magnesium sulfate for short-term neuroprotection in premature neonates
+## 2                                                     Magnesium Sulfate for Fetal Neuroprotection in Women at Risk of Preterm Birth: Analysis of its Effect on Cerebral Palsy
+## 3                                                                           Immediate clinical outcomes in preterm neonates receiving antenatal magnesium for neuroprotection
+## 4                                                       Efficacy of Antenatal Magnesium Sulfate for Neuroprotection in Extreme Prematurity: A Comparative Observational Study
+## 5                                                                  Effects of antenatal magnesium sulfate treatment for neonatal neuro-protection on cerebral oxygen kinetics
+## 6                                                                                                  Effect of Magnesium Sulfate Given for Neuroprotection Before Preterm Birth
+## 7                                                                            Effect of Prenatal Infusion of Magnesium Sulphate on Neurological Complication in Preterm Infant
+## 8                                                               Antenatal Magnesium Sulfate for Preterm Neuroprotection: A Single-Center Experience from Kuwait Tertiary NICU
+## 9                                                                                                                   Antenatal Magnesium and Cerebral Palsy in Preterm Infants
+## 10                                                                       Does magnesium sulfate delay the active phase of labor in women with premature rupture of membranes 
+## 11                                      The effect of magnesium sulfate administration for neuroprotection on latency in   women with preterm premature rupture of membranes 
+## 12                                                                                                                     Magnesium sulfate for the prevention of cerebral palsy
+## 13 Effect of magnesium sulphate on mortality and neurologic morbidity of the very-preterm newborn with two-year neurological outcome: Results of the prospective PREMAG trial
+##    MgHIVpositif MgHIVnegatif Total Mg ControleHIVpositif ControleHIVnegatif
+## 1             1           53       54                  9                 45
+## 2             0           49       49                  2                 46
+## 3            84          205      289                 48                138
+## 4             4           46       50                  8                 42
+## 5             4           32       36                  9                 19
+## 6           165          431      596                148                438
+## 7             0           28       28                  1                 31
+## 8            13           34       47                 90                 92
+## 9            15          762      777                 27                809
+## 10            2           44       46                  3                 43
+## 11            4          585      589                 13                589
+## 12           23         1089     1112                 38               1146
+## 13           24          317      341                 23                301
+##    Total contrôle                     Auteurs                   Design
+## 1              54    Manoj Varanattu C and al Essai_controle_randomise
+## 2              48          Nidhi Gupta and al Essai_controle_randomise
+## 3             186  Sudeepta Kumar Basu and al    Cohorte_retrospective
+## 4              50       Vandana Bansal and al      Cohorte_prospective
+## 5              28     Michael J. Stark and al      Cohorte_prospective
+## 6             586 Caroline A. Crowther and al Essai_controle_randomise
+## 7              32             Muhammed and al Essai_controle_randomise
+## 8             182                 Mariam Ayed    Cohorte_retrospective
+## 9             836            Deborah G and al Essai_controle_randomise
+## 10             46 Masoumeh Mirzamoradi and al Essai_controle_randomise
+## 11            602                Horton et al Essai_controle_randomise
+## 12           1184       Dwight J Rouse and al Essai_controle_randomise
+## 13            324             S Marret and al Essai_controle_randomise
+##                   MgSO4_regimen age_nouveau_né   RR          TE  seTE
+## 1  4g bolus puis 1g/h perfusion        <34_sem 0.11 -2.20000000 0.210
+## 2  4g bolus puis 1g/h perfusion      24-37_sem 0.22 -1.51412773 1.015
+## 3                  Non Specifié        <34_sem 1.13  0.12221763 0.170
+## 4  4g bolus puis 2g/h perfusion        <34_sem 0.50 -0.69314718 0.350
+## 5                      4g bolus        <34_sem 0.35 -1.04982212 0.220
+## 6  4g bolus puis 1g/h perfusion        <34_sem 1.10  0.09531018 0.100
+## 7                  Non Specifié      24-37_sem 0.38 -0.96758403 2.270
+## 8                      4g bolus        <34_sem 0.56 -0.57981850 0.140
+## 9  6g bolus puis 2g/h perfusion        <34_sem 0.60 -0.51082562 0.200
+## 10 4g bolus puis 2g/h perfusion        <34_sem 0.67 -0.40047757 0.940
+## 11 6g bolus puis 2g/h perfusion        <34_sem 0.31 -1.17118298 0.210
+## 12 6g bolus puis 2g/h perfusion        <34_sem 0.64 -0.44628710 0.170
+## 13                     4g bolus        <34_sem 0.99 -0.01000000 0.290
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{madata }\OtherTok{\textless{}{-}} \FunctionTok{metagen}\NormalTok{(}\AttributeTok{TE =}\NormalTok{ TE,}
+            \AttributeTok{seTE =}\NormalTok{ seTE,}
+            \AttributeTok{data =}\NormalTok{ data,}
+            \AttributeTok{studlab =} \FunctionTok{paste}\NormalTok{(Auteurs),}
+            \AttributeTok{comb.fixed =} \ConstantTok{TRUE}\NormalTok{,}
+            \AttributeTok{comb.random =} \ConstantTok{TRUE}\NormalTok{,}
+            \AttributeTok{method.tau =} \StringTok{"DL"}\NormalTok{,}
+            \AttributeTok{hakn =} \ConstantTok{FALSE}\NormalTok{,}
+            \AttributeTok{prediction =} \ConstantTok{TRUE}\NormalTok{,}
+            \AttributeTok{sm =} \StringTok{"RR"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{forest}\NormalTok{(madata)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{metaanalysis_files/figure-latex/unnamed-chunk-22-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{funnel}\NormalTok{(madata, }\AttributeTok{xlab =} \StringTok{"Risk Ratio"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{metaanalysis_files/figure-latex/unnamed-chunk-23-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{names}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "Numéro"             "Auteurs"            "Année"             
+##  [4] "Nom_article"        "MgHIVpositif"       "MgHIVnegatif"      
+##  [7] "Total Mg"           "ControleHIVpositif" "ControleHIVnegatif"
+## [10] "Total contrôle"     "Auteurs"            "Design"            
+## [13] "MgSO4_regimen"      "age_nouveau_né"     "RR"                
+## [16] "TE"                 "seTE"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# We will try to visualize the results of subgroup analyses based on \textquotesingle{}MgSO4\_regimen\textquotesingle{},}
+\CommentTok{\# \textquotesingle{}Control\textquotesingle{}, \textquotesingle{}age nouveau né\textquotesingle{} Subgroup analysis based on \textquotesingle{}MgSO4\_regimen\textquotesingle{}}
+\NormalTok{madata\_rob }\OtherTok{\textless{}{-}} \FunctionTok{metagen}\NormalTok{(}\AttributeTok{TE =}\NormalTok{ TE, }\AttributeTok{seTE =}\NormalTok{ seTE, }\AttributeTok{data =}\NormalTok{ data, }\AttributeTok{studlab =} \FunctionTok{paste}\NormalTok{(Auteurs), }
+    \AttributeTok{comb.fixed =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{comb.random =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{method.tau =} \StringTok{"DL"}\NormalTok{, }\AttributeTok{hakn =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{prediction =} \ConstantTok{TRUE}\NormalTok{, }
+    \AttributeTok{sm =} \StringTok{"RR"}\NormalTok{, }\AttributeTok{byvar =}\NormalTok{ MgSO4\_regimen)}
+\NormalTok{ROB }\OtherTok{\textless{}{-}} \FunctionTok{update}\NormalTok{(madata\_rob, }\AttributeTok{byvar =}\NormalTok{ MgSO4\_regimen, }\AttributeTok{bylab =} \StringTok{"Dose"}\NormalTok{)}
+
+
+\DocumentationTok{\#\# Subgroup analysis based on \textquotesingle{}Control\textquotesingle{}}
+\NormalTok{madata\_cont }\OtherTok{\textless{}{-}} \FunctionTok{metagen}\NormalTok{(}\AttributeTok{TE =}\NormalTok{ TE, }\AttributeTok{seTE =}\NormalTok{ seTE, }\AttributeTok{data =}\NormalTok{ data, }\AttributeTok{studlab =} \FunctionTok{paste}\NormalTok{(Auteurs), }
+    \AttributeTok{comb.fixed =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{comb.random =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{method.tau =} \StringTok{"DL"}\NormalTok{, }\AttributeTok{hakn =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{prediction =} \ConstantTok{TRUE}\NormalTok{, }
+    \AttributeTok{sm =} \StringTok{"RR"}\NormalTok{, }\AttributeTok{byvar =}\NormalTok{ Design)}
+\NormalTok{control }\OtherTok{\textless{}{-}} \FunctionTok{update}\NormalTok{(madata\_cont, }\AttributeTok{byvar =}\NormalTok{ Design, }\AttributeTok{bylab =} \StringTok{"Design"}\NormalTok{)}
+
+\DocumentationTok{\#\# Subgroup analysis based on \textquotesingle{}age nouveau né\textquotesingle{}}
+\NormalTok{madata\_pop }\OtherTok{\textless{}{-}} \FunctionTok{metagen}\NormalTok{(}\AttributeTok{TE =}\NormalTok{ TE, }\AttributeTok{seTE =}\NormalTok{ seTE, }\AttributeTok{data =}\NormalTok{ data, }\AttributeTok{studlab =} \FunctionTok{paste}\NormalTok{(Auteurs), }
+    \AttributeTok{comb.fixed =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{comb.random =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{method.tau =} \StringTok{"DL"}\NormalTok{, }\AttributeTok{hakn =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{prediction =} \ConstantTok{TRUE}\NormalTok{, }
+    \AttributeTok{sm =} \StringTok{"RR"}\NormalTok{, }\AttributeTok{byvar =}\NormalTok{ age\_nouveau\_né)}
+\NormalTok{population }\OtherTok{\textless{}{-}} \FunctionTok{update}\NormalTok{(madata\_pop, }\AttributeTok{byvar =}\NormalTok{ age\_nouveau\_né, }\AttributeTok{bylab =} \StringTok{"age nouveau né"}\NormalTok{)}
+
+
+
+\CommentTok{\# Combining and visualizing the subgroup analyses}
+\NormalTok{madata\_subgroup }\OtherTok{\textless{}{-}} \FunctionTok{metabind}\NormalTok{(ROB, control, population)}
+\FunctionTok{forest}\NormalTok{(madata\_subgroup, }\AttributeTok{rightcols =} \FunctionTok{c}\NormalTok{(}\StringTok{"effect"}\NormalTok{, }\StringTok{"ci"}\NormalTok{, }\StringTok{"I2"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{metaanalysis_files/figure-latex/unnamed-chunk-25-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{kbl}\NormalTok{(}\AttributeTok{booktabs=}\ConstantTok{TRUE}\NormalTok{,}
+      \AttributeTok{digits=}\DecValTok{2}\NormalTok{,}
+      \AttributeTok{format.args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{decimal.mark=}\StringTok{"."}\NormalTok{),}
+      \AttributeTok{linesep =} \StringTok{""}\NormalTok{ ,}
+      \AttributeTok{escape =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{kable\_styling}\NormalTok{(}\AttributeTok{latex\_options=}\FunctionTok{c}\NormalTok{(}\StringTok{"HOLD\_position"}\NormalTok{,}\StringTok{"scale\_down"}\NormalTok{), }\AttributeTok{bootstrap\_options =} \FunctionTok{c}\NormalTok{(}\StringTok{"condensed"}\NormalTok{), }\AttributeTok{position=}\StringTok{"center"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{column\_spec}\NormalTok{(}\DecValTok{1}\NormalTok{, }\AttributeTok{width=}\StringTok{"4cm"}\NormalTok{) }\SpecialCharTok{|\textgreater{}} 
+  \FunctionTok{row\_spec}\NormalTok{(}\DecValTok{0}\NormalTok{, }\AttributeTok{bold =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}[H]
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{>{\raggedleft\arraybackslash}p{4cm}lrlrrrrrrllllrrr}
+\toprule
+\textbf{Numéro} & \textbf{Auteurs} & \textbf{Année} & \textbf{Nom_article} & \textbf{MgHIVpositif} & \textbf{MgHIVnegatif} & \textbf{Total Mg} & \textbf{ControleHIVpositif} & \textbf{ControleHIVnegatif} & \textbf{Total contrôle} & \textbf{Auteurs} & \textbf{Design} & \textbf{MgSO4_regimen} & \textbf{age_nouveau_né} & \textbf{RR} & \textbf{TE} & \textbf{seTE}\\
+\midrule
+1 & Manoj Varanattu C and al & 2017 & Randomized controlled trial of antenatal magnesium sulfate for short-term neuroprotection in premature neonates & 1 & 53 & 54 & 9 & 45 & 54 & Manoj Varanattu C and al & Essai_controle_randomise & 4g bolus puis 1g/h perfusion & <34_sem & 0.11 & -2.20 & 0.21\\
+2 & Nidhi Gupta and al & 2021 & Magnesium Sulfate for Fetal Neuroprotection in Women at Risk of Preterm Birth: Analysis of its Effect on Cerebral Palsy & 0 & 49 & 49 & 2 & 46 & 48 & Nidhi Gupta and al & Essai_controle_randomise & 4g bolus puis 1g/h perfusion & 24-37_sem & 0.22 & -1.51 & 1.01\\
+3 & Sudeepta Kumar Basu and al & 2011 & Immediate clinical outcomes in preterm neonates receiving antenatal magnesium for neuroprotection & 84 & 205 & 289 & 48 & 138 & 186 & Sudeepta Kumar Basu and al & Cohorte_retrospective & Non Specifié & <34_sem & 1.13 & 0.12 & 0.17\\
+4 & Vandana Bansal and al & 2021 & Efficacy of Antenatal Magnesium Sulfate for Neuroprotection in Extreme Prematurity: A Comparative Observational Study & 4 & 46 & 50 & 8 & 42 & 50 & Vandana Bansal and al & Cohorte_prospective & 4g bolus puis 2g/h perfusion & <34_sem & 0.50 & -0.69 & 0.35\\
+5 & Michael J. Stark and al & 2015 & Effects of antenatal magnesium sulfate treatment for neonatal neuro-protection on cerebral oxygen kinetics & 4 & 32 & 36 & 9 & 19 & 28 & Michael J. Stark and al & Cohorte_prospective & 4g bolus & <34_sem & 0.35 & -1.05 & 0.22\\
+6 & Caroline A. Crowther and al & 2003 & Effect of Magnesium Sulfate Given for Neuroprotection Before Preterm Birth & 165 & 431 & 596 & 148 & 438 & 586 & Caroline A. Crowther and al & Essai_controle_randomise & 4g bolus puis 1g/h perfusion & <34_sem & 1.10 & 0.10 & 0.10\\
+7 & Muhammed and al & 2023 & Effect of Prenatal Infusion of Magnesium Sulphate on Neurological Complication in Preterm Infant & 0 & 28 & 28 & 1 & 31 & 32 & Muhammed and al & Essai_controle_randomise & Non Specifié & 24-37_sem & 0.38 & -0.97 & 2.27\\
+8 & Mariam Ayed & 2022 & Antenatal Magnesium Sulfate for Preterm Neuroprotection: A Single-Center Experience from Kuwait Tertiary NICU & 13 & 34 & 47 & 90 & 92 & 182 & Mariam Ayed & Cohorte_retrospective & 4g bolus & <34_sem & 0.56 & -0.58 & 0.14\\
+9 & Deborah G and al & 2015 & Antenatal Magnesium and Cerebral Palsy in Preterm Infants & 15 & 762 & 777 & 27 & 809 & 836 & Deborah G and al & Essai_controle_randomise & 6g bolus puis 2g/h perfusion & <34_sem & 0.60 & -0.51 & 0.20\\
+10 & Masoumeh Mirzamoradi and al & 2015 & Does magnesium sulfate delay the active phase of labor in women with premature rupture of membranes & 2 & 44 & 46 & 3 & 43 & 46 & Masoumeh Mirzamoradi and al & Essai_controle_randomise & 4g bolus puis 2g/h perfusion & <34_sem & 0.67 & -0.40 & 0.94\\
+11 & Horton et al & 2015 & The effect of magnesium sulfate administration for neuroprotection on latency in   women with preterm premature rupture of membranes & 4 & 585 & 589 & 13 & 589 & 602 & Horton et al & Essai_controle_randomise & 6g bolus puis 2g/h perfusion & <34_sem & 0.31 & -1.17 & 0.21\\
+12 & Dwight J Rouse and al & 2008 & Magnesium sulfate for the prevention of cerebral palsy & 23 & 1089 & 1112 & 38 & 1146 & 1184 & Dwight J Rouse and al & Essai_controle_randomise & 6g bolus puis 2g/h perfusion & <34_sem & 0.64 & -0.45 & 0.17\\
+13 & S Marret and al & 2008 & Effect of magnesium sulphate on mortality and neurologic morbidity of the very-preterm newborn with two-year neurological outcome: Results of the prospective PREMAG trial & 24 & 317 & 341 & 23 & 301 & 324 & S Marret and al & Essai_controle_randomise & 4g bolus & <34_sem & 0.99 & -0.01 & 0.29\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{View}\NormalTok{(data\_rob2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data\_rob\_2 }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data\_rob\_2.csv"}\NormalTok{,}\AttributeTok{sep=}\StringTok{";"}\NormalTok{,}\AttributeTok{fileEncoding =} \StringTok{"Latin1"}\NormalTok{, }\AttributeTok{check.names =}\NormalTok{ F)}
+\NormalTok{data\_rob\_2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Numéro                       Study            D1            D2  D3
+## 1      1    Manoj Varanattu C and al           Low           Low Low
+## 2      2          Nidhi Gupta and al Some concerns Some concerns Low
+## 3      3  Sudeepta Kumar Basu and al           Low           Low Low
+## 4      4             Muhammed and al Some concerns          High Low
+## 5      5            Deborah G and al           Low           Low Low
+## 6      6 Masoumeh Mirzamoradi and al           Low Some concerns Low
+## 7      7                Horton et al           Low           Low Low
+## 8      8       Dwight J Rouse and al           Low           Low Low
+## 9      9             S Marret and al           Low           Low Low
+##              D4            D5       Overall Weight
+## 1           Low           Low           Low   1,83
+## 2          High           Low Some concerns   0,88
+## 3           Low           Low           Low  15,75
+## 4 Some concerns Some concerns Some concerns    0,8
+## 5           Low           Low           Low  10,09
+## 6           Low Some concerns Some concerns    2,4
+## 7           Low           Low           Low   4,96
+## 8           Low           Low           Low  11,93
+## 9           Low Some concerns Some concerns  11,25
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data\_rob\_2}\SpecialCharTok{$}\NormalTok{Weight}\OtherTok{\textless{}{-}}\FunctionTok{gsub}\NormalTok{(}\StringTok{","}\NormalTok{,}\StringTok{"."}\NormalTok{,data\_rob\_2}\SpecialCharTok{$}\NormalTok{Weight)}
+
+
+
+\NormalTok{data\_rob\_2}\SpecialCharTok{$}\NormalTok{Weight}\OtherTok{\textless{}{-}}\FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{as.character}\NormalTok{(data\_rob\_2}\SpecialCharTok{$}\NormalTok{Weight))}
+
+
+\NormalTok{data\_rob\_2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Numéro                       Study            D1            D2  D3
+## 1      1    Manoj Varanattu C and al           Low           Low Low
+## 2      2          Nidhi Gupta and al Some concerns Some concerns Low
+## 3      3  Sudeepta Kumar Basu and al           Low           Low Low
+## 4      4             Muhammed and al Some concerns          High Low
+## 5      5            Deborah G and al           Low           Low Low
+## 6      6 Masoumeh Mirzamoradi and al           Low Some concerns Low
+## 7      7                Horton et al           Low           Low Low
+## 8      8       Dwight J Rouse and al           Low           Low Low
+## 9      9             S Marret and al           Low           Low Low
+##              D4            D5       Overall Weight
+## 1           Low           Low           Low   1.83
+## 2          High           Low Some concerns   0.88
+## 3           Low           Low           Low  15.75
+## 4 Some concerns Some concerns Some concerns   0.80
+## 5           Low           Low           Low  10.09
+## 6           Low Some concerns Some concerns   2.40
+## 7           Low           Low           Low   4.96
+## 8           Low           Low           Low  11.93
+## 9           Low Some concerns Some concerns  11.25
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# To print the summary of RoB assessments}
+\FunctionTok{rob\_summary}\NormalTok{(data\_rob\_2, }\AttributeTok{tool =} \StringTok{"ROB2"}\NormalTok{, }\AttributeTok{weighted =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{overall =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{metaanalysis_files/figure-latex/unnamed-chunk-30-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# To print the item{-}specific results of RoB assessments}
+\FunctionTok{rob\_traffic\_light}\NormalTok{(data\_rob2, }\AttributeTok{tool =} \StringTok{"ROB2"}\NormalTok{, }\AttributeTok{psize =} \DecValTok{8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{metaanalysis_files/figure-latex/unnamed-chunk-31-1.pdf}
+
+\end{document}
