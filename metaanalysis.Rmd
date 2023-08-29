@@ -148,8 +148,39 @@ names(data)
 ```
 
 
+#Metaregression
+
+```{r}
+
+dat <- escalc(measure="RR", ai=MgHIVpositif, bi=MgHIVnegatif, ci=ControleHIVpositif, di=ControleHIVnegatif, data=data,
+              slab=paste(Auteurs, Année, sep=", ")) # also add study labels
+dat
+```
 
 
+```{r}
+res <- rma(yi, vi, mods = ~ factor(MgSO4_regimen)+factor(age_nouveau_né), data=dat)
+res
+
+```
+
+
+```{r}
+
+res <- rma(yi, vi, mods = ~ factor(MgSO4_regimen), data=dat)
+res
+```
+
+
+```{r}
+res <- rma(yi, vi, mods = ~ factor(age_nouveau_né), data=dat)
+res
+```
+
+
+
+
+#Analyse de sous groupe
 ```{r}
 data <- read.csv("data_final_suite.csv",sep=";",fileEncoding = "Latin1", check.names = F)
 data
@@ -279,7 +310,20 @@ data |>
   row_spec(0, bold = T)
 
 ```
+```{r}
 
+data |> 
+  kbl(booktabs=TRUE,
+      digits=2,
+      format.args = list(decimal.mark="."),
+      linesep = "" ,
+      escape = FALSE) |> 
+  kable_styling(latex_options=c("HOLD_position","scale_down"), bootstrap_options = c("condensed"), position="center") |>
+  column_spec(1, width="4cm") |> 
+  row_spec(0, bold = T)|>save_kable("C:/Users/ZIE MAMADOU/Desktop/Stage/image.png")
+
+```
+ 
 
 ```{r}
 View(data_rob2)
