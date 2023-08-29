@@ -14,10 +14,12 @@ Cependant, il existe une controverse quant à cet effet neuroprotecteur.
 Evaluer l’impact du sulfate de magnésium sur les HIV du prématuré.
 
 3. Méthodologie
+
+   
 Une revue systématique et méta-analyse qui a inclu toutes les études essai contrôlés randomisées et cohorte qui ont travaillé sur l’impact du sulfate de magnésium utilisé 
 comme neuroprotecteur du cerveau fœtal dans les HIV du prématuré.
 
-4. Résultats
+5. Résultats
 
 Après une revue systématique, au total 13 études ont été incluses, et le risque relatif (RR) poolé et
 son IC ont été calculé au moyen de la méthode de DerSimonian et Laird à l’aide modèles aléatoires. 
